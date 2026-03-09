@@ -12,7 +12,11 @@ class EventController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $events = Event::latest()
+            ->take(50)
+            ->get();
+
+        return view('home', ['events'=> $events]);
     }
 
     /**
