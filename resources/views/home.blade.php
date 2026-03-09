@@ -2,14 +2,14 @@
     <div class="max-w-2xl mx-auto">
         @forelse ($events as $event)
             <div class="collapse collapse-arrow bg-base-100 shadow mt-8">
-                <input type="checkbox" />
-                <div class="collapse-title">
+                <input type="checkbox" id="event-{{ $event->id }}" />
+                <label for="event-{{ $event->id }}" class="collapse-title cursor-pointer">
                     <div class="font-semibold">{{ $event->name }}</div>
                     <div class="mt-1">{{ $event->description }}</div>
                     <div class="text-sm text-gray-500 mt-2">
                         {{ $event->created_at->diffForHumans() }}
                     </div>
-                </div>
+                </label>
                 <div class="collapse-content">
                     <div class="mt-1">Hi</div>
                 </div>
