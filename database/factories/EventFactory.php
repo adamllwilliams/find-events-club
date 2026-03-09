@@ -19,7 +19,7 @@ class EventFactory extends Factory
 
     public function definition(): array
     {
-        $cardiffVenues = [
+        $venues = [
             'Tramshed',
             'Clwb Ifor Bach',
             'The Globe',
@@ -32,7 +32,7 @@ class EventFactory extends Factory
             'The Moon Club',
         ];
 
-        $eventTypes = [
+        $events = [
             ['name' => '🎵 Live Music Night', 'desc' => 'Amazing local bands playing tonight!'],
             ['name' => '🎭 Comedy Show', 'desc' => 'Stand-up comedy with top Cardiff comedians'],
             ['name' => '🎨 Art Exhibition', 'desc' => 'Opening night - free drinks!'],
@@ -45,21 +45,20 @@ class EventFactory extends Factory
             ['name' => '📚 Book Launch', 'desc' => 'Meet the author, Q&A session'],
         ];
 
-        $event = $this->faker->randomElement($eventTypes);
-        $startDate = $this->faker->dateTimeBetween('now', '+2 months');
-        $endDate = (clone $startDate)->modify('+3 hours');
+        $event = $events[array_rand($events)];
+        $start = now()->addDays(rand(1, 60))->setHour(19);
 
         return [
             'name' => $event['name'],
             'description' => $event['desc'],
-            'start_datetime' => $startDate,
-            'end_datetime' => $endDate,
-            'venue_name' => $this->faker->randomElement($cardiffVenues),
+            'start_datetime' => $start,
+            'end_datetime' => $start->copy()->addHours(3),
+            'venue_name' => $venues[array_rand($venues)],
             'status' => 'approved',
-            'image_link' => 'https://picsum.photos/seed/' . $this->faker->numberBetween(1, 1000) . '/400/600',
-            'ticket_link' => $this->faker->optional(0.5)->url(),
-            'social_link' => $this->faker->optional(0.3)->url(),
-            'organiser' => $this->faker->optional(0.4)->name(),
+            'image_link' => 'https://picsum.photos/400/600?random=' . rand(1, 1000),
+            'ticket_link' => null,
+            'social_link' => null,
+            'organiser' => null,
         ];
     }
 }
