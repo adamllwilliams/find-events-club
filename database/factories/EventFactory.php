@@ -45,8 +45,8 @@ class EventFactory extends Factory
             ['name' => '📚 Book Launch', 'desc' => 'Meet the author, Q&A session'],
         ];
 
-        $event = fake()->randomElement($eventTypes);
-        $startDate = fake()->dateTimeBetween('now', '+2 months');
+        $event = $this->faker->randomElement($eventTypes);
+        $startDate = $this->faker->dateTimeBetween('now', '+2 months');
         $endDate = (clone $startDate)->modify('+3 hours');
 
         return [
@@ -54,12 +54,12 @@ class EventFactory extends Factory
             'description' => $event['desc'],
             'start_datetime' => $startDate,
             'end_datetime' => $endDate,
-            'venue_name' => fake()->randomElement($cardiffVenues),
+            'venue_name' => $this->faker->randomElement($cardiffVenues),
             'status' => 'approved',
-            'image_link' => 'https://picsum.photos/seed/' . fake()->numberBetween(1, 1000) . '/400/600',
-            'ticket_link' => fake()->optional(0.5)->url(),
-            'social_link' => fake()->optional(0.3)->url(),
-            'organiser' => fake()->optional(0.4)->name(),
+            'image_link' => 'https://picsum.photos/seed/' . $this->faker->numberBetween(1, 1000) . '/400/600',
+            'ticket_link' => $this->faker->optional(0.5)->url(),
+            'social_link' => $this->faker->optional(0.3)->url(),
+            'organiser' => $this->faker->optional(0.4)->name(),
         ];
     }
 }
