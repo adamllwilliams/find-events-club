@@ -14,9 +14,9 @@ return new class extends Migration
         Schema::create('events', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->text('description')->nullable();
-            $table->dateTime('start_datetime');
-            $table->dateTime('end_datetime');
+            $table->string('description');
+            $table->dateTime('start_datetime')->nullable();
+            $table->dateTime('end_datetime')->nullable();
             $table->string('venue_name')->nullable();
             $table->enum('status', ['pending','approved', 'rejected'])->default('pending');
             $table->string('image_link')->nullable();

@@ -4,9 +4,11 @@
             <div class="card bg-base-100 shadow mt-8">
                 <div class="card-body">
                     <div>
-                        <h1 class="text-3xl font-bold">Welcome to Find Events Club!</h1>
-                        <p class="mt-4 text-base-content/60">This is your brand new Laravel application. Time to make it
-                            sing!</p>
+                        <div class="font-semibold">Event Name</div>
+                        <div class="mt-1">Event Description</div>
+                        <div class="text-sm text-gray-500 mt-2">
+                            11 minutes ago
+                        </div>
                     </div>
                 </div>
             </div>
