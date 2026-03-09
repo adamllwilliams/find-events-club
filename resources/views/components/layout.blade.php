@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="lofi">
+<html lang="en" data-theme="dim">
 
 <head>
     <meta charset="UTF-8">
@@ -15,7 +15,7 @@
 <body class="min-h-screen flex flex-col bg-base-200 font-sans">
     <nav class="navbar bg-base-100">
         <div class="navbar-start">
-            <a href="/" class="btn btn-ghost text-xl">findevents.club</a>
+            <a href="/" class="btn btn-ghost text-2xl text-primary">findevents.club</a>
         </div>
     </nav>
 
