@@ -4,18 +4,18 @@
             <div class="collapse collapse-arrow bg-base-100 shadow mt-8">
                 <input type="checkbox" id="event-{{ $event->id }}" />
                 <label for="event-{{ $event->id }}" class="collapse-title cursor-pointer">
-                    <div class="font-semibold">{{ $event->name }}</div>
-                    <div class="mt-1">{{ $event->description }}</div>
-                    <div class="text-sm text-gray-500 mt-2">
+                    <div class="font-semibold text-base-content">{{ $event->name }}</div>
+                    <div class="mt-1 text-base-content">{{ $event->description }}</div>
+                    <div class="text-sm text-base-content/50 mt-2">
                         {{ $event->created_at->diffForHumans() }}
                     </div>
                 </label>
                 <div class="collapse-content">
-                    <div class="mt-1">Hi</div>
+                    <div class="mt-1 text-base-content">Hi</div>
                 </div>
             </div>
         @empty
-            <p class="text-gray-500">No events yet. Be the first to post!</p>
+            <p class="text-base-content/50">No events yet. Be the first to post!</p>
         @endforelse
     </div>
 </x-layout>
