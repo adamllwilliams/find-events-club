@@ -33,12 +33,6 @@
             </div>
         </div>
     </main>
-
-    <footer class="footer footer-center p-5 bg-base-300 text-base-content text-xs">
-        <div>
-            <p>© 2026 Find Events Club - Built with Laravel and ❤️</p>
-        </div>
-    </footer>
 </body>
 
 </html>
