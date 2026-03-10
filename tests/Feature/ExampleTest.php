@@ -1,6 +1,10 @@
 <?php
 
-test('the application returns a successful response', function () {
+use Illuminate\Foundation\Testing\RefreshDatabase;
+
+uses(RefreshDatabase::class);
+
+it('gives back a successful response for home page', function() {
     $response = $this->get('/');
 
     $response->assertStatus(200);
