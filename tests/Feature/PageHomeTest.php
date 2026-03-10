@@ -2,6 +2,7 @@
 
 use App\Models\Event;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Carbon\Carbon;
 
 uses(RefreshDatabase::class);
 
@@ -35,9 +36,16 @@ it('shows events feed', function (): void
                 ]);
     });
 
-it('shows events by latest first', function (): void
+it('shows events latest first', function (): void
     {
         // Arrange
-        // Act
-        // Assert
+        Event::factory()->create(['name' => 'Event A', 'created_at' => Carbon::yesterday()]);
+        Event::factory()->create(['name'=> 'Event B','created_at'=> Carbon::now()]);
+
+        // Act & Assert
+        $this->get('/')
+            ->assertSeeTextInOrder([
+                'Event B',
+                'Event A',
+            ]);
     });
