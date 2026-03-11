@@ -7,7 +7,7 @@
                     <div class="font-semibold text-base-content">{{ $event->name }}</div>
                     <div class="mt-1 text-base-content">{{ $event->description }}</div>
                     <div class="text-sm text-base-content/50 mt-2">
-                        {{ $event->created_at->diffForHumans() }}
+                        Posted {{ $event->created_at->diffForHumans() }}
                     </div>
                 </label>
                 <div class="collapse-content">
