@@ -11,7 +11,7 @@
                     </div>
                 </label>
                 <div class="collapse-content">
-                    <div class="mt-1 text-base-content">Fr 27 Mar 19:30 • Clwb Ifor Bach</div>
+                    <div class="mt-1 text-base-content">Fr 27 Mar 19:30 - 22:00 • Clwb Ifor Bach</div>
                 </div>
             </div>
         @empty
